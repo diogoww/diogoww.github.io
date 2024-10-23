@@ -28,6 +28,7 @@
         display: block;
     }
     body {
+        font-family: "Fira Code", Arial, Helvetica, sans-serif;
         line-height: 1;
     }
     ol, ul {

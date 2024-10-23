@@ -5,3 +5,8 @@
     text-shadow: 5px 5px 0px black;
 }
 
+.title.-second {
+    color: red;
+    text-shadow: none;
+    text-align: center;
+}

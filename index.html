@@ -2,6 +2,7 @@
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8"> <!--lista de caracteres-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="assets/img/virus.png" type="image/png">
         <title>Diogo Varaschin</title>     
 
@@ -29,6 +30,7 @@
         <link rel="stylesheet" href="css/components/main-label.css">
         <link rel="stylesheet" href="css/components/main-input.css">
         <link rel="stylesheet" href="css/components/main-form.css">
+        <link rel="stylesheet" href="css/components/responsive.css">
 
     </head>
 
@@ -37,11 +39,11 @@
         <header class="main-header"> <!--cabecalho-->
             <img src="assets/img/logo.gif" alt="avatar do diogo" style="width: 60px; height: auto;">
             <nav>
-                <a class="main-action" href="" lang="en">Skills</a>
-                <a class="main-action" href="">Projetos</a>
-                <a class="main-action" href="">Sobre</a>
-                <a class="main-action" href="">Contatos</a>
-                <a class="main-button" href="" lang="en">Download CV</a>
+                <a class="main-action" href="#skills" lang="en">Skills</a>
+                <a class="main-action" href="#projetos">Projetos</a>
+                <a class="main-action" href="#sobre">Sobre</a>
+                <a class="main-action" href="#contatos">Contatos</a>
+                <a class="main-button" href="assets/curriculum-diogo.pdf" lang="en" download="">Download CV</a>
             </nav>    
         </header>
 
@@ -53,13 +55,13 @@
                 </div>
                 
                 <div class="navigation">
-                    <a class="main-button" href="" lang="en">Download CV</a>
+                    <a class="main-button" href="assets/curriculum-diogo.pdf" lang="en">Download CV</a>
                     <a class="main-button" href="">Contatos</a>
                 </div>
             </div>
         </section>
 
-        <section class="main-section">
+        <section id="skills" class="main-section">
 
             <h2 class="main-title -second">Skills</h2>
 
@@ -148,7 +150,7 @@
 
         </section>
 
-        <section class="main-section -bgBLACK -bdFIRST">
+        <section class="main-section -bgBLACK -bdFIRST" id="projetos">
             <h2 class="main-title -second">Projetos</h2>
 
              <div class="wrapper-card">   
@@ -161,7 +163,7 @@
 
         </section>
 
-        <section class="main-section -bgSECOND -bdBLACK">
+        <section class="main-section -bgSECOND -bdBLACK" id="sobre">
             <h2 class="main-title -second">Sobre</h2>
 
             <P class="main-description">
@@ -169,7 +171,7 @@
             </P>
         </section>
 
-        <form class="main-form">
+        <form class="main-form" id="contatos">
             <legend class="main-title -second">Contatos</legend>
 
             <label class="main-label" for="name">Nome</label>

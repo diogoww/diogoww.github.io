@@ -26,6 +26,7 @@
         <link rel="stylesheet" href="css/components/wrapper-card.css">
         <link rel="stylesheet" href="css/components/main-description.css">
         <link rel="stylesheet" href="css/components/main-footer.css">
+        <link rel="stylesheet" href="css/components/main-label.css">
 
     </head>
 
@@ -166,8 +167,20 @@
             </P>
         </section>
 
-        <footer class="main-footer">
+        <form action="">
+            <label class="main-label" for="name">Nome</label>
+            <input id="name" type="text">
 
+            <label class="main-label" for="email">Email</label>
+            <input id="email" type="email">
+
+            <label class="main-label" for="massage">Mensagem</label>
+            <textarea name="" id="massage"></textarea>
+
+            <button type="submit">Enviar</button>  
+        </form>
+
+        <footer class="main-footer">
             <a class="action" href="https://www.instagram.com/diogojvo/" target="_blank">
                 <img src="img/insta-logo.png" width="45px" height="45px" alt="logo do instagram">
             </a>
@@ -179,7 +192,6 @@
             <a class="action" href="https://github.com/diogoww" target="_black">
                 <img src="img/github-logo.png" width="45px" height="45px" alt="logo do github">
             </a>
-
         </footer>
 
 

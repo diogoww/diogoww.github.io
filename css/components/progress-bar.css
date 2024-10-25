@@ -8,7 +8,7 @@
 .progress-bar::-webkit-progress-bar,
 .progress-bar::-webkit-progress-value {
     background-color: #FF7D00;
-    width: 30%;
+    width: 20%;
 }
 
 .progress-bar::-moz-progress-bar{

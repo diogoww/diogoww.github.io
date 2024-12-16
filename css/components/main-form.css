@@ -1,0 +1,28 @@
+.main-form {
+    padding: 50px 40px;
+
+}
+
+.main-form .main-title {
+    margin-bottom: 50px;
+}
+
+input:focus, textarea:focus{
+    border-color: blue !important;
+}
+
+input:invalid, textarea:invalid{
+    border-color: red;
+}
+
+input:valid, textarea:valid {
+    border-color: green;
+}
+
+.main-form .main-input {
+    margin-bottom: 20px;
+}
+
+.main-form .main-input.-textarea {
+    margin-bottom: 40px;
+}

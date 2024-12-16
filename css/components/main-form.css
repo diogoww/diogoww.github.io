@@ -8,7 +8,7 @@
 }
 
 input:focus, textarea:focus{
-    border-color: blue !important;
+    border-color: #ff7d00 !important;
 }
 
 input:invalid, textarea:invalid{

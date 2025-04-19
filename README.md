@@ -9,9 +9,7 @@ Meu site pessoal de direcionamento ao Portfólio, Currículo, Certificações e 
   <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </p>
 
-<p align="center">
-  <img alt="projeto DevLinks" src=".github/preview.png" width="100%">
-</p>
+
 
 ## 🚀 Tecnologias
 

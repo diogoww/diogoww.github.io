@@ -1,5 +1,5 @@
-const CACHE_NAME = 'diogow-portfolio-v1';
-const urlsToCache = [
+const CACHE_NAME = 'diogow-portfolio-v2';
+const PRECACHE_URLS = [
   '/',
   '/index.html',
   '/styles/style.css',
@@ -12,6 +12,7 @@ const urlsToCache = [
   '/src/images/eu.png',
   '/src/images/wave.svg',
   '/src/images/icons/java-icon.png',
+  '/src/images/icons/csharp-icon.png',
   '/src/images/icons/javascript-icon.png',
   '/src/images/icons/php-icon.png',
   '/src/images/icons/python-logo.png',
@@ -26,22 +27,50 @@ const urlsToCache = [
 ];
 
 self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => {
-        console.log('Opened cache');
-        return cache.addAll(urlsToCache);
-      })
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(PRECACHE_URLS);
+    })
   );
 });
 
+// Strategy:
+// - HTML navigations: network-first (fresh content), fallback to cache if offline
+// - Other assets: stale-while-revalidate
 self.addEventListener('fetch', event => {
+  const request = event.request;
+
+  // Handle navigations (HTML)
+  const isNavigation = request.mode === 'navigate' ||
+    (request.method === 'GET' && request.headers.get('accept')?.includes('text/html'));
+
+  if (isNavigation) {
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          const copy = response.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+          return response;
+        })
+        .catch(() => caches.match(request).then(res => res || caches.match('/index.html')))
+    );
+    return;
+  }
+
+  // Stale-while-revalidate for other requests
   event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        return response || fetch(event.request);
-      }
-    )
+    caches.match(request).then(cachedResponse => {
+      const fetchPromise = fetch(request)
+        .then(networkResponse => {
+          const copy = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(request, copy));
+          return networkResponse;
+        })
+        .catch(() => cachedResponse);
+
+      return cachedResponse || fetchPromise;
+    })
   );
 });
 
@@ -52,11 +81,10 @@ self.addEventListener('activate', event => {
       return Promise.all(
         cacheNames.map(cacheName => {
           if (cacheName !== CACHE_NAME) {
-            console.log('Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 }); 

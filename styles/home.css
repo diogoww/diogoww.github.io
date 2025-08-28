@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: flex-start;
     height: 100vh;
+    height: 100svh;
     min-height: 500px;
     position: relative;
     overflow: hidden;
@@ -159,6 +160,8 @@
         padding: 2rem 5%;
         gap: 0;
         background: none;
+        height: auto;
+        min-height: 100svh;
     }
     #banner {
         display: flex;
@@ -214,6 +217,8 @@
         gap: 0;
         padding: 0;
         background: none;
+        height: auto;
+        min-height: 100svh;
     }
     
     #cta {
@@ -260,7 +265,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        min-height: 100vh;
+        min-height: 100svh;
         padding: 2.5rem 3% 1.5rem 3%;
         gap: 1.2rem;
         width: 100%;

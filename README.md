@@ -163,7 +163,6 @@ Este projeto é de uso pessoal e educacional. Sinta-se livre para usar como refe
 Contribuições são bem-vindas! Sinta-se livre para:
 - Reportar bugs
 - Sugerir melhorias
-- Enviar pull requests
 
 ## 📞 Contato
 

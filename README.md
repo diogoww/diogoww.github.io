@@ -4,6 +4,20 @@
 
 Este é o meu portfólio pessoal, sou um estudante de desenvolvimento Back-End e técnico de suporte de TI. O site apresenta uma interface moderna, responsiva e interativa que destaca minhas habilidades técnicas e experiência profissional.
 
+## 🏗️ Arquitetura Técnica
+
+### Estrutura Modular
+- **HTML**: Estrutura semântica com comentários organizacionais
+- **CSS**: Sistema modular com variáveis CSS e componentes reutilizáveis
+- **JavaScript**: Código documentado com JSDoc e funções bem estruturadas
+- **PWA**: Service Worker com estratégias de cache inteligentes
+
+### Padrões de Desenvolvimento
+- **Mobile-First**: Design responsivo começando pelo mobile
+- **Progressive Enhancement**: Funcionalidades básicas funcionam sem JavaScript
+- **Accessibility-First**: Implementação de WCAG 2.1 desde o início
+- **Performance-Optimized**: Lazy loading, debouncing e otimizações de cache
+
 ## ✨ Características
 
 - **Design Responsivo**: Adaptável a todos os dispositivos (desktop, tablet, mobile)
@@ -31,23 +45,33 @@ Este é o meu portfólio pessoal, sou um estudante de desenvolvimento Back-End e
 
 ```
 diogow.dev/
-├── index.html              # Página principal
-├── styles/                 # Arquivos CSS
-│   ├── style.css          # Estilos principais e variáveis
-│   ├── header.css         # Estilos do cabeçalho
-│   ├── home.css           # Estilos da seção inicial
-│   ├── about.css          # Estilos da seção sobre
-│   ├── tech.css           # Estilos da seção tecnologias
-│   └── footer.css         # Estilos do rodapé
+├── index.html              # Página principal com SEO e PWA configurados
+├── styles/                 # Sistema CSS modular
+│   ├── style.css          # Estilos base, variáveis CSS e utilitários
+│   ├── header.css         # Cabeçalho fixo e navegação responsiva
+│   ├── home.css           # Seção inicial com layout adaptativo
+│   ├── about.css          # Grid de cards informativos
+│   ├── tech.css           # Grid de tecnologias com hover effects
+│   └── footer.css         # Rodapé com onda decorativa
 ├── javascript/
-│   └── script.js          # Funcionalidades JavaScript
+│   └── script.js          # Funcionalidades com JSDoc documentado
 ├── src/
-│   └── images/            # Imagens e ícones
-│       ├── eu.png         # Foto do perfil
-│       ├── wave.svg       # Elemento decorativo
-│       └── icons/         # Ícones das tecnologias
-└── README.md              # Documentação do projeto
+│   ├── images/            # Assets otimizados
+│   │   ├── eu.png         # Foto do perfil (otimizada)
+│   │   ├── wave.svg       # Elemento decorativo SVG
+│   │   └── icons/         # Ícones das tecnologias (PNG otimizado)
+│   └── favicon.ico        # Favicon do site
+├── sw.js                  # Service Worker para PWA
+├── manifest.json          # Manifesto PWA
+├── sitemap.xml           # Sitemap para SEO
+├── robots.txt            # Diretrizes para crawlers
+└── README.md             # Documentação técnica completa
 ```
+
+### Arquivos de Configuração
+- **package.json**: Scripts de desenvolvimento e metadados
+- **.gitignore**: Arquivos ignorados pelo Git
+- **.gitattributes**: Configurações do Git para diferentes tipos de arquivo
 
 ## 🎨 Design System
 
@@ -110,7 +134,14 @@ diogow.dev/
 - Links para redes sociais
 - Elemento decorativo de onda
 
-## 🔧 Como Executar
+## 🔧 Guia de Desenvolvimento
+
+### Pré-requisitos
+- Navegador moderno (Chrome, Firefox, Safari, Edge)
+- Servidor HTTP local (para desenvolvimento)
+- Editor de código (VS Code recomendado)
+
+### Instalação e Execução
 
 1. **Clone o repositório**:
    ```bash
@@ -118,13 +149,9 @@ diogow.dev/
    cd diogow.dev
    ```
 
-2. **Abra o arquivo**:
-   - Abra `index.html` em qualquer navegador moderno
-   - Ou use um servidor local para desenvolvimento
-
-3. **Para desenvolvimento**:
+2. **Execução Local**:
    ```bash
-   # Usando Python
+   # Usando Python (recomendado)
    python -m http.server 8000
    
    # Usando Node.js
@@ -134,18 +161,77 @@ diogow.dev/
    php -S localhost:8000
    ```
 
+3. **Acesse**: `http://localhost:8000`
+
+### Scripts Disponíveis
+```bash
+# Desenvolvimento
+npm run dev          # Servidor de desenvolvimento
+npm run start        # Servidor Python
+
+# Produção
+npm run serve        # Servidor estático otimizado
+npm run build        # Verificação de build (estático)
+```
+
+### Estrutura de Desenvolvimento
+
+#### CSS
+- **Modular**: Cada seção tem seu próprio arquivo CSS
+- **Variáveis**: Sistema de design centralizado em `:root`
+- **Responsivo**: Mobile-first com breakpoints bem definidos
+- **Componentes**: Classes reutilizáveis para botões, cards, etc.
+
+#### JavaScript
+- **Modular**: Funções organizadas por funcionalidade
+- **Documentado**: JSDoc para todas as funções principais
+- **Performance**: Debouncing e throttling implementados
+- **Acessibilidade**: Navegação por teclado e ARIA labels
+
+#### PWA
+- **Service Worker**: Cache inteligente com estratégias diferentes
+- **Manifest**: Configuração completa para instalação
+- **Offline**: Funcionamento básico sem conexão
+
+## 🛠️ Manutenção e Atualizações
+
+### Adicionando Novas Seções
+1. **HTML**: Adicione nova `<section>` no `index.html`
+2. **CSS**: Crie novo arquivo em `styles/` e importe em `style.css`
+3. **JavaScript**: Adicione nova seção no array `$sections`
+4. **Navegação**: Adicione link no menu principal e mobile
+
+### Modificando Cores e Tema
+- Edite as variáveis CSS em `:root` no arquivo `styles/style.css`
+- Todas as cores são centralizadas para fácil manutenção
+- Teste em diferentes dispositivos após mudanças
+
+### Adicionando Novas Tecnologias
+1. Adicione ícone em `src/images/icons/`
+2. Crie novo `.techz` no HTML da seção tech
+3. Adicione borda colorida específica no CSS
+4. Atualize o Service Worker se necessário
+
+### Performance e Otimização
+- **Imagens**: Use WebP quando possível, otimize PNGs
+- **CSS**: Minifique para produção
+- **JavaScript**: Use debouncing em eventos de scroll/resize
+- **Cache**: Atualize `CACHE_NAME` no Service Worker para forçar atualização
+
 ## 📊 Performance
 
 - **Lighthouse Score**: 90+ em todas as categorias
 - **Carregamento**: < 2 segundos
 - **Responsividade**: Otimizado para todos os dispositivos
 - **Acessibilidade**: Conformidade com WCAG 2.1
+- **PWA**: Funciona offline e pode ser instalado
 
 ## 🌐 Compatibilidade
 
 - **Navegadores**: Chrome, Firefox, Safari, Edge (versões recentes)
 - **Dispositivos**: Desktop, Tablet, Mobile
 - **Resoluções**: 320px - 1920px+
+- **PWA**: Suporte completo em navegadores modernos
 
 ## 📝 Licença
 

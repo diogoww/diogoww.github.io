@@ -1,3 +1,8 @@
+/* ===========================================
+   HEADER & NAVBAR
+   - Cabeçalho fixo com navbar responsiva
+   - Efeitos de hover e indicador ativo
+   =========================================== */
 header {
     width: 100%;
     padding: 1.5rem 8%;

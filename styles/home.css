@@ -1,3 +1,8 @@
+/* ===========================================
+   HOME (Seção inicial)
+   - Layout dividido CTA/Banner (desktop)
+   - Layout empilhado no mobile com gradiente
+   =========================================== */
 #home {
     display: flex;
     align-items: center;

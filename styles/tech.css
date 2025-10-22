@@ -1,3 +1,8 @@
+/* ===========================================
+   TECH (Tecnologias)
+   - Grid responsivo de tecnologias com hover
+   - Avatar colorido por tecnologia
+   =========================================== */
 #tech {
     min-height: 100vh;
     display: flex;

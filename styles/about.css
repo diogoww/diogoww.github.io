@@ -1,3 +1,8 @@
+/* ===========================================
+   ABOUT (Quem sou eu?)
+   - Grid de 4 cards com animações sutis
+   - Versão responsiva para 2 colunas e 1 coluna
+   =========================================== */
 #about {
     display: flex;
     flex-direction: column;

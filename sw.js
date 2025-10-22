@@ -1,3 +1,11 @@
+// ===========================================
+// Service Worker
+// Estratégias de cache:
+// - Navegações HTML: network-first (tenta rede; fallback cache)
+// - Demais assets: stale-while-revalidate (usa cache e atualiza em segundo plano)
+// Também realiza limpeza de caches antigos no activate
+// ===========================================
+
 const CACHE_NAME = 'diogow-portfolio-v2';
 const PRECACHE_URLS = [
   '/',
@@ -26,6 +34,7 @@ const PRECACHE_URLS = [
   'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'
 ];
 
+// Pré-cacheia recursos essenciais durante a instalação
 self.addEventListener('install', event => {
   self.skipWaiting();
   event.waitUntil(
@@ -38,6 +47,7 @@ self.addEventListener('install', event => {
 // Strategy:
 // - HTML navigations: network-first (fresh content), fallback to cache if offline
 // - Other assets: stale-while-revalidate
+// Roteamento e estratégias de resposta a requisições
 self.addEventListener('fetch', event => {
   const request = event.request;
 
@@ -75,6 +85,7 @@ self.addEventListener('fetch', event => {
 });
 
 
+// Limpa caches antigos e assume controle imediato dos clients
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {

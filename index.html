@@ -1,41 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+    <!-- ===========================================
+         CONFIGURAÇÕES BÁSICAS E META TAGS
+         =========================================== -->
+    
+    <!-- Favicon - Ícone que aparece na aba do navegador -->
     <link rel="icon" href="src/favicon.ico" type="image/x-icon">
+    
+    <!-- Configurações básicas de charset e viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    
+    <!-- Meta tags para SEO - Descrição que aparece nos resultados de busca -->
     <meta name="description" content="Portfólio pessoal de Diogo José Varaschin de Oliveira - Desenvolvedor Back-End e Técnico de Suporte de TI. Conheça minhas habilidades em Java, JavaScript, Python, PHP e mais.">
     <meta name="author" content="Diogo José Varaschin de Oliveira">
     <meta name="robots" content="index, follow">
     
+    <!-- ===========================================
+         OPEN GRAPH - COMPARTILHAMENTO EM REDES SOCIAIS
+         =========================================== -->
+    
+    <!-- Meta tags do Facebook/LinkedIn - Como o site aparece quando compartilhado -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://diogow.dev/">
     <meta property="og:title" content="Diogo Varaschin - Portfólio">
     <meta property="og:description" content="Portfólio pessoal de Diogo José Varaschin de Oliveira - Desenvolvedor Back-End e Técnico de Suporte de TI">
     <meta property="og:image" content="https://diogow.dev/src/images/eu.png">
 
+    <!-- Meta tags do Twitter - Como o site aparece quando compartilhado no Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://diogow.dev/">
     <meta property="twitter:title" content="Diogo Varaschin - Portfólio">
     <meta property="twitter:description" content="Portfólio pessoal de Diogo José Varaschin de Oliveira - Desenvolvedor Back-End e Técnico de Suporte de TI">
     <meta property="twitter:image" content="https://diogow.dev/src/images/eu.png">
     
+    <!-- ===========================================
+         CONFIGURAÇÕES PWA (PROGRESSIVE WEB APP)
+         =========================================== -->
+    
+    <!-- Manifest - Arquivo que define como o app se comporta quando instalado -->
     <link rel="manifest" href="manifest.json">
+    
+    <!-- Cor do tema - Usada na barra de status do navegador -->
     <meta name="theme-color" content="#6a418f">
+    
+    <!-- Ícone para dispositivos Apple -->
     <link rel="apple-touch-icon" href="src/images/avatar.png">
     
+    <!-- ===========================================
+         OTIMIZAÇÃO DE PERFORMANCE - PRECONNECT
+         =========================================== -->
+    
+    <!-- Preconnect para fontes Google - Carrega mais rápido -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Preconnect para CDN - Carrega bibliotecas mais rápido -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     
+    <!-- ===========================================
+         ESTILOS E BIBLIOTECAS EXTERNAS
+         =========================================== -->
+    
+    <!-- CSS principal do site -->
     <link rel="stylesheet" href="styles/style.css">
+    
+    <!-- Font Awesome - Ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+    <!-- ===========================================
+         SCRIPTS JAVASCRIPT
+         =========================================== -->
+    
+    <!-- jQuery - Biblioteca JavaScript para manipulação do DOM -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <!-- ScrollReveal - Biblioteca para animações de scroll -->
     <script src="https://unpkg.com/scrollreveal"></script>
     
-    <!-- Structured Data (JSON-LD) -->
+    <!-- ===========================================
+         STRUCTURED DATA (JSON-LD) - SEO AVANÇADO
+         =========================================== -->
+    
+    <!-- Dados estruturados para o Google entender melhor o conteúdo -->
+    <!-- Isso ajuda o site a aparecer melhor nos resultados de busca -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -70,14 +120,25 @@
     }
     </script>
 
+    <!-- Título da página - Aparece na aba do navegador -->
     <title>Diogo Varaschin - Desenvolvedor Back-End & Técnico de Suporte de TI</title>
 </head>
+
 <body>
-    <!-- Skip link para acessibilidade -->
+    <!-- ===========================================
+         ACESSIBILIDADE
+         =========================================== -->
+    
+    <!-- Skip link - Permite usuários de leitores de tela pular para o conteúdo -->
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    
+    <!-- ===========================================
+         CABEÇALHO E NAVEGAÇÃO
+         =========================================== -->
     
     <header>
         <nav id="navbar">
+            <!-- Lista de navegação principal -->
             <ul id="nav_list">
                 <li class="nav-item active">
                     <a href="#home">Início</a>
@@ -89,12 +150,17 @@
                     <a href="#tech">Tecnologias</a>
                 </li>
             </ul>
+            
+            <!-- Botão para download do CV -->
             <a href="src/CV Diogo Jose Varaschin de Oliveira.pdf" class="btn-default" download>Baixar CV</a>
+            
+            <!-- Botão do menu mobile (hambúrguer) -->
             <button id="mobile_btn">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </nav>
 
+        <!-- Menu mobile - Aparece quando a tela é pequena -->
         <div id="mobile_menu">
             <ul id="mobile_nav_list">
                 <li class="nav-item">
@@ -111,9 +177,20 @@
         </div>
     </header>
 
+    <!-- ===========================================
+         CONTEÚDO PRINCIPAL
+         =========================================== -->
+    
     <main id="main-content">
+        <!-- ===========================================
+             SEÇÃO HOME - APRESENTAÇÃO PRINCIPAL
+             =========================================== -->
+        
         <section id="home">
+            <!-- Elemento decorativo (atualmente oculto) -->
             <div class="shape"></div>
+            
+            <!-- Container principal com texto e informações -->
             <div id="cta">
                 <h1 class="title">
                     <span>Olá, eu sou</span>
@@ -125,6 +202,7 @@
                     Back-End Developer Student / IT Support
                 </p>
 
+                <!-- Links para redes sociais -->
                 <div class="social-media-buttons">
                     <a href="https://github.com/diogoww" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i class="fa-brands fa-github"></i>
@@ -140,15 +218,22 @@
                 </div>
             </div>
             
+            <!-- Container da imagem/foto -->
             <div id="banner">
                 <img src="src/images/eu.png" alt="Diogo Varaschin">
             </div>
         </section>
 
+        <!-- ===========================================
+             SEÇÃO ABOUT - INFORMAÇÕES SOBRE MIM
+             =========================================== -->
+        
         <section id="about">
             <h2 class="section-title">Quem sou eu?</h2>
             
+            <!-- Grid com 4 cards de informações -->
             <div id="infos">
+                <!-- Card 1: Experiência Técnica -->
                 <div class="infos-me">
                     <h3 class="infos-title">
                         Experiência Técnica
@@ -158,6 +243,7 @@
                     </span>                   
                 </div>
 
+                <!-- Card 2: Desenvolvimento -->
                 <div class="infos-me">
                     <h3 class="infos-title">
                         Desenvolvimento
@@ -167,6 +253,7 @@
                     </span>                   
                 </div>
 
+                <!-- Card 3: Perfil Profissional -->
                 <div class="infos-me">
                     <h3 class="infos-title">
                         Perfil Profissional
@@ -176,6 +263,7 @@
                     </span>                   
                 </div>
 
+                <!-- Card 4: Boas-vindas -->
                 <div class="infos-me">
                     <h3 class="infos-title">
                         Boas-vindas
@@ -187,13 +275,19 @@
             </div>
         </section>
 
+        <!-- ===========================================
+             SEÇÃO TECH - TECNOLOGIAS ESTUDADAS
+             =========================================== -->
+        
         <section id="tech">
             <div id="tech_content">
                 <h2 class="section-title">
                     Tecnologias que estou estudando
                 </h2>
 
+                <!-- Grid responsivo com as tecnologias -->
                 <div id="techs">
+                    <!-- Java -->
                     <div class="techz">
                         <img src="src/images/icons/java-icon.png" class="tech-avatar" alt="Java">
                         <div class="techz-content">
@@ -201,6 +295,7 @@
                         </div>
                     </div>
                 
+                    <!-- C# -->
                     <div class="techz">
                         <img src="src/images/icons/csharp-icon.png" class="tech-avatar" alt="C#">
                         <div class="techz-content">
@@ -208,6 +303,7 @@
                         </div>
                     </div>
                 
+                    <!-- JavaScript -->
                     <div class="techz">
                         <img src="src/images/icons/javascript-icon.png" class="tech-avatar" alt="JavaScript">
                         <div class="techz-content">
@@ -215,6 +311,7 @@
                         </div>
                     </div>
                 
+                    <!-- PHP -->
                     <div class="techz">
                         <img src="src/images/icons/php-icon.png" class="tech-avatar" alt="PHP">
                         <div class="techz-content">
@@ -222,6 +319,7 @@
                         </div>
                     </div>
                 
+                    <!-- Python -->
                     <div class="techz">
                         <img src="src/images/icons/python-logo.png" class="tech-avatar" alt="Python">
                         <div class="techz-content">
@@ -229,6 +327,7 @@
                         </div>
                     </div>
                 
+                    <!-- React -->
                     <div class="techz">
                         <img src="src/images/icons/react-icon.png" class="tech-avatar" alt="React">
                         <div class="techz-content">
@@ -236,6 +335,7 @@
                         </div>
                     </div>
                 
+                    <!-- TypeScript -->
                     <div class="techz">
                         <img src="src/images/icons/typescript-logo.png" class="tech-avatar" alt="TypeScript">
                         <div class="techz-content">
@@ -243,6 +343,7 @@
                         </div>
                     </div>
                 
+                    <!-- HTML5 -->
                     <div class="techz">
                         <img src="src/images/icons/html-logo.png" class="tech-avatar" alt="HTML5">
                         <div class="techz-content">
@@ -250,6 +351,7 @@
                         </div>
                     </div>
                 
+                    <!-- CSS3 -->
                     <div class="techz">
                         <img src="src/images/icons/css-icon.png" class="tech-avatar" alt="CSS3">
                         <div class="techz-content">
@@ -261,11 +363,17 @@
         </section>
     </main>
 
+    <!-- ===========================================
+         RODAPÉ
+         =========================================== -->
+    
     <footer>
+        <!-- Imagem decorativa de onda -->
         <img src="src/images/wave.svg" alt="">
 
         <div id="footer_items">
             <div class="footer-social-center">
+                <!-- Links para redes sociais no rodapé -->
                 <div class="social-media-buttons">
                     <a href="https://github.com/diogoww" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                         <i class="fa-brands fa-github"></i>
@@ -277,12 +385,20 @@
                         <i class="fa-brands fa-linkedin"></i>
                     </a>
                 </div>
+                
+                <!-- Copyright -->
                 <span id="copyright">
                     &copy; 2025 Diogo José Varaschin de Oliveira
                 </span>
             </div>
         </div>
     </footer>
+    
+    <!-- ===========================================
+         SCRIPTS FINAIS
+         =========================================== -->
+    
+    <!-- Script principal do site -->
     <script src="javascript/script.js"></script>
 </body>
 </html>

@@ -1,0 +1,13 @@
+@media (max-width: 480px) {
+    .window-body {
+        padding: 1rem;
+    }
+
+    .profile h1 {
+        font-size: 1.7rem;
+    }
+
+    .readme pre {
+        font-size: 0.75rem;
+    }
+}

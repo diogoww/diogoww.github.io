@@ -1,0 +1,10 @@
+.readme a {
+    color: #444;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.readme a:hover {
+    color: #000;
+    text-decoration: underline;
+}

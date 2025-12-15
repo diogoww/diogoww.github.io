@@ -1,0 +1,21 @@
+body {
+    min-height: 100vh;
+    background: var(--bg-dark);
+    font-family: 'IBM Plex Mono', monospace, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+}
+
+body::before {
+  content: "+ x * + x *";
+  position: fixed;
+  inset: 0;
+  font-family: 'VT323', monospace;
+  color: #1a1a1a;
+  opacity: 0.25;
+  letter-spacing: 2rem;
+  line-height: 3rem;
+  pointer-events: none;
+}

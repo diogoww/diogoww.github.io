@@ -1,0 +1,22 @@
+.profile {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid #222;
+    margin-bottom: 0.8rem;
+}
+
+.profile h1 {
+    font-family: 'VT323', monospace;
+    font-size: 2rem;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}

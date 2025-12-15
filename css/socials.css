@@ -1,15 +1,17 @@
 .socials {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    margin-top: 0.8rem;
+    gap: 1.2rem;
+    margin-top: 1rem;
 }
 
 .socials a {
     text-decoration: none;
     color: #333;
+    font-size: 1.4rem;
 }
 
 .socials a:hover {
-    text-decoration: underline;
+    color: #000;
+    transform: translateY(-1px);
 }

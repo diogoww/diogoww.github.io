@@ -21,40 +21,63 @@ function bootWindow() {
 // efeito de digitacao no readme
 function typeReadme() {
     const pre = document.querySelector(".readme pre");
-    const text = pre.innerText;
+    const readmeText = `👋 Olá, visitante!
+
+- Área: Desenvolvimento / Análise de Dados
+- Local: Curitiba - PR, Brasil
+- Skills Dev:
+  • Java, Python, PHP
+  • HTML, CSS, JavaScript
+  • Git e GitHub | Banco de Dados
+- Skills Data Analyst:
+  • Power BI, Excel
+  • Análise Crítica e Insights Estratégicos
+
+📄 Currículo
+→ curriculo.pdf
+`;
 
     let index = 0;
-    pre.innerText = "";
+    pre.textContent = "";
 
     function type() {
-        if (index < text.length) {
-            pre.innerText += text.charAt(index);
+        if (index < readmeText.length) {
+            pre.textContent += readmeText.charAt(index);
             index++;
-            setTimeout(type, 18); //velocidade retro
+            setTimeout(type, 18);
+        } else {
+            // quando termina, transforma o texto em link real
+            const finalLink = pre.textContent;
+            pre.innerHTML = finalLink.replace(
+                "curriculo.pdf",
+                `<a href="assets/curriculo-diogo.pdf" target="_blank" rel="noopener noreferrer">curriculo.pdf</a>`
+            );
         }
     }
-
-    setTimeout(type, 700); // espera o boot terminar
+    setTimeout(type, 700); //comeca depois do boot da janela
 }
 
-// botoes da janela (fake xp)
+// botao X da janela (fake xp)
 function windowButtons() {
     const buttons = document.querySelectorAll(".window-buttons button");
-    const windowEl = document.querySelector(".window");
 
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
+            // feedback visual
             btn.style.background = "#bbb";
 
             setTimeout(() => {
                 btn.style.background = "#dcdcdc";
             }, 120);
-        });
-    });
 
-    buttons[2].addEventListener("click", () => {
-        windowEl.style.transition = "opacity 0.3s ease, transform 0.3s ease";
-        windowEl.style.opacity = "0";
-        windowEl.style.transform = "scale(0.95)";
+            // se for o botão X
+            if (btn.textContent.trim() === "X") {
+                window.open(
+                    "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+            }
+        });
     });
 }

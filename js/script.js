@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
     windowButtons();
 });
 
+// animacao de "boot"
 function bootWindow() {
     const windowEl = document.querySelector(".window");
 
@@ -15,5 +16,24 @@ function bootWindow() {
     windowEl.style.opacity = "1";
     windowEl.style.transform = "translateY(0) scale(1)";
   }, 300);
+}
+
+// efeito de digitacao no readme
+function typeReadme() {
+    const pre = document.querySelector(".readme pre");
+    const text = pre.innerText;
+
+    let index = 0;
+    pre.innerText = "";
+
+    function type() {
+        if (index < text.length) {
+            pre.innerText += text.charAt(index);
+            index++;
+            setTimeout(type, 18); //velocidade retro
+        }
+    }
+
+    setTimeout(type, 700); // espera o boot terminar
 }
 

@@ -2,10 +2,23 @@ body {
     min-height: 100vh;
     background: var(--bg-dark);
     font-family: 'IBM Plex Mono', monospace, sans-serif;
+    font-size: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 2rem 1rem;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("../assets/windows-xp.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  transform: scale(1.1);
+  z-index: -2;
 }
 
 body::before {

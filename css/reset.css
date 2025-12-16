@@ -3,3 +3,12 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+html {
+    font-size: 18px;
+    -webkit-text-size-adjust: 100%;
+}
+
+body, button, input, textarea {
+    font-family: inherit;
+}

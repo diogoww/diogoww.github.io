@@ -1,0 +1,18 @@
+# OS / Editor
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.*
+
+# Cache
+.cache/
+dist/
+build/

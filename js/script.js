@@ -21,23 +21,25 @@ function bootWindow() {
 // efeito de digitacao no readme
 function typeReadme() {
     const pre = document.querySelector(".readme pre");
-    const readmeText = `👋 Olá, visitante!
+    const readmeText = `👋 hello, visitor!
 
-Eu sou o Diogo, apaixonado por técnologia, música e esportes!
-Essas são as minhas infos! 👇
+i'm Diogo, passionate about technology, music, and sports!
 
-- Área: Desenvolvimento / Análise de Dados
-- Local: Curitiba - PR, Brasil
-- Skills Dev:
-  • Java, Python, PHP
+here's a bit about me! 👇
+
+- languages: pt-BR, en, es
+- field: fullstack development / data analyst
+- location: Curitiba - PR, Brasil
+- dev skills:
+  • java, python, PHP
   • HTML, CSS, JavaScript
-  • Git e GitHub | Banco de Dados
-- Skills Data Analyst:
-  • Power BI, Excel
-  • Análise Crítica e Insights Estratégicos
+  • git & gitHub | databases
+- data analyst skills:
+  • power BI, excel
+  • critical analysis & strategic insights
 
-📄 Currículo
-→ curriculo.pdf
+📄 resume
+→ resume.pdf
 `;
 
     let index = 0;

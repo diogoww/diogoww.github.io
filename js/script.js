@@ -24,7 +24,6 @@ function typeReadme() {
     const readmeText = `👋 hello, visitor!
 
 i'm Diogo, passionate about technology, music, and sports!
-
 here's a bit about me! 👇
 
 - languages: pt-BR, en, es

@@ -1,10 +1,23 @@
 .readme a {
-    color: #444;
+    color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 
 .readme a:hover {
-    color: #000;
+    color: #444;
     text-decoration: none;
+}
+
+.readme pre {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    line-height: 1.5;
+
+    /* 🔥 correção do problema */
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow-wrap: break-word;
+
+    max-width: 100%;
 }

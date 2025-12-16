@@ -68,15 +68,20 @@ function windowButtons() {
 
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
+            const isCloseButton = btn.textContent.trim() === "X";
+            const originalColor = isCloseButton ? "#e81123" : "#dcdcdc";
+            
             // feedback visual
             btn.style.background = "#bbb";
 
             setTimeout(() => {
-                btn.style.background = "#dcdcdc";
+                btn.style.background = originalColor;
+                // Remove o foco para evitar estado preso
+                btn.blur();
             }, 120);
 
             // se for o botão X
-            if (btn.textContent.trim() === "X") {
+            if (isCloseButton) {
                 window.open(
                     "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
                     "_blank",

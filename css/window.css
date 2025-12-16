@@ -1,29 +1,46 @@
 .window {
     width: 100%;
-    max-width: 420px;
+    max-width: 600px;
     background: var(--window-bg);
-    border: 2px solid var(--window-border);
+    border: 1px solid var(--text-muted);
     z-index: 1;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .window-header {
     background: linear-gradient(#4b7bec, var(--xp-blue));
     color: #fff;
-    padding: 0.4rem 0.6rem;
+    padding: 0.5rem 0.8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: 'VT323', monospace;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
 
 .window-buttons button {
     background: #dcdcdc;
     border: 1px solid #555;
-    width: 20px;
-    height: 20px;
-    font-size: 0.7rem;
-    cursor: default;
+    width: 22px;
+    height: 22px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.window-buttons button:last-child {
+    background: #e81123;
+    color: #fff;
+    border-color: #9e0b16;
+}
+
+.window-buttons button:hover {
+    filter: brightness(1.05);
+}
+
+.window-buttons button:active {
+    transform: translateY(1px);
 }
 
 .window-body {

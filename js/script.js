@@ -16,6 +16,9 @@ const translations = {
                 socialLinkedin: "LinkedIn",
                 socialGithub: "GitHub",
                 socialSpotify: "Spotify",
+                btnMinimize: "Minimizar",
+                btnMaximize: "Maximizar",
+                btnClose: "Fechar",
                 readme: `👋 ola, visitante!
 
 sou o Diogo, apaixonado por tecnologia, musica e esportes!
@@ -43,6 +46,9 @@ aqui vai um pouco sobre mim! 👇
                 socialLinkedin: "LinkedIn",
                 socialGithub: "GitHub",
                 socialSpotify: "Spotify",
+                btnMinimize: "Minimize",
+                btnMaximize: "Maximize",
+                btnClose: "Close",
                 readme: `👋 hello, visitor!
 
 i'm Diogo, passionate about technology, music, and sports!
@@ -223,13 +229,13 @@ function windowButtons() {
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
             const isCloseButton = btn.textContent.trim() === "X";
-            const originalColor = isCloseButton ? "#e81123" : "#dcdcdc";
+            const originalColor = getComputedStyle(btn).backgroundColor;
             
             // feedback visual
-            btn.style.background = "#bbb";
+            btn.style.backgroundColor = "#bbb";
 
             setTimeout(() => {
-                btn.style.background = originalColor;
+                btn.style.backgroundColor = originalColor;
                 // Remove o foco para evitar estado preso
                 btn.blur();
             }, 120);

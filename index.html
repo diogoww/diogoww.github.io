@@ -19,37 +19,47 @@
     <main class="window">
         <div class="window-header">
             <span>diogo-varaschin.exe</span>
-            <div class="window-buttons">
-                <button aria-hidden="true">_</button>
-                <button aria-hidden="true">□</button>
-                <button aria-hidden="true">X</button>
+            <div class="window-actions">
+                <div class="lang-toggle" role="group" aria-label="Selecionar idioma">
+                    <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
+                    <span class="lang-sep" aria-hidden="true">|</span>
+                    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Alternar modo escuro">
+                    <i class='bx bx-moon' aria-hidden="true"></i>
+                </button>
+                <div class="window-buttons">
+                    <button aria-hidden="true">_</button>
+                    <button aria-hidden="true">□</button>
+                    <button aria-hidden="true">X</button>
+                </div>
             </div>
         </div>
 
         <div class="window-body">
             <section class="profile">
-                <img src="assets/diogow.jpeg" alt="foto de perfil">
+                <img src="assets/diogow.jpeg" alt="foto de perfil" data-i18n="profileAlt" data-i18n-attr="alt">
                 <h1>Diogo José Varaschin de Oliveira</h1>
-                <p class="subtitle">dev fullstack & data analyst</p>
+                <p class="subtitle" data-i18n="subtitle">dev fullstack & data analyst</p>
 
-                <nav class="socials" aria-label="Redes sociais">
-                    <a href="https://www.instagram.com/diogojvo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <nav class="socials" aria-label="Redes sociais" data-i18n="socialsNav" data-i18n-attr="aria-label">
+                    <a href="https://www.instagram.com/diogojvo/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" data-i18n="socialInstagram" data-i18n-attr="aria-label">
                         <i class='bx bxl-instagram-alt'></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/diogo-varaschin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/diogo-varaschin/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" data-i18n="socialLinkedin" data-i18n-attr="aria-label">
                         <i class='bx bxl-linkedin'></i>
                     </a>
-                    <a href="https://github.com/diogoww" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                    <a href="https://github.com/diogoww" target="_blank" rel="noopener noreferrer" aria-label="GitHub" data-i18n="socialGithub" data-i18n-attr="aria-label">
                         <i class='bx bxl-github'></i>
                     </a>
-                    <a href="https://open.spotify.com/user/didico14?si=51b2e40f04424888" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+                    <a href="https://open.spotify.com/user/didico14?si=51b2e40f04424888" target="_blank" rel="noopener noreferrer" aria-label="Spotify" data-i18n="socialSpotify" data-i18n-attr="aria-label">
                         <i class='bx bxl-spotify'></i>
                     </a>
                 </nav>
             </section>
 
             <section class="readme">
-                <pre id="readme-text"></pre> <!-- vai puxar as infos do javascript -->
+                <pre id="readme-text" data-i18n="readme"></pre> <!-- vai puxar as infos do javascript -->
             </section>
         </div>
     </main>

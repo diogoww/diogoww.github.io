@@ -19,6 +19,57 @@
     font-size: 1.3rem;
 }
 
+.window-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--control-bg);
+    border: 1px solid var(--control-border);
+    border-radius: 6px;
+    padding: 0.2rem 0.4rem;
+}
+
+.lang-btn {
+    background: transparent;
+    border: none;
+    color: var(--control-text);
+    font-family: 'VT323', monospace;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.lang-btn.is-active {
+    text-decoration: underline;
+}
+
+.lang-sep {
+    color: var(--control-text);
+    opacity: 0.8;
+}
+
+.theme-toggle {
+    background: var(--control-bg);
+    border: 1px solid var(--control-border);
+    color: var(--control-text);
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.theme-toggle i {
+    font-size: 1.1rem;
+}
+
 .window-buttons button {
     background: #dcdcdc;
     border: 1px solid #555;

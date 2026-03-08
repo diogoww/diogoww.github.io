@@ -5,4 +5,17 @@
     --xp-blue: #245edb;
     --text-dark: #111;
     --text-muted: #555;
+    --control-bg: rgba(255, 255, 255, 0.2);
+    --control-border: rgba(255, 255, 255, 0.35);
+    --control-text: #fff;
+}
+
+body.theme-dark {
+    --window-bg: #141414;
+    --window-border: #2a2a2a;
+    --text-dark: #f5f5f5;
+    --text-muted: #b5b5b5;
+    --control-bg: rgba(0, 0, 0, 0.35);
+    --control-border: rgba(255, 255, 255, 0.2);
+    --control-text: #fff;
 }

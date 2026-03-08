@@ -1,11 +1,11 @@
 .readme a {
-    color: #000;
+    color: var(--text-dark);
     text-decoration: none;
     cursor: pointer;
 }
 
 .readme a:hover {
-    color: #444;
+    color: var(--text-muted);
     text-decoration: none;
 }
 

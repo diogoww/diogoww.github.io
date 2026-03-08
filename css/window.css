@@ -72,13 +72,14 @@
 }
 
 .window-buttons button {
-    background: #dcdcdc;
-    border: 1px solid #555;
-    width: 22px;
-    height: 22px;
+    background: var(--control-bg);
+    border: 1px solid var(--control-border);
+    color: var(--control-text);
+    width: 28px;
+    height: 28px;
     font-size: 0.8rem;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 .window-buttons button:last-child {

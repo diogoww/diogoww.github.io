@@ -6,6 +6,7 @@
     z-index: 1;
     border-radius: 10px;
     overflow: hidden;
+    color: var(--text-dark);
 }
 
 .window-header {

@@ -34,6 +34,7 @@
     border: 1px solid var(--control-border);
     border-radius: 6px;
     padding: 0.2rem 0.4rem;
+    transition: filter 0.15s ease, box-shadow 0.15s ease;
 }
 
 .lang-btn {
@@ -43,10 +44,18 @@
     font-family: 'VT323', monospace;
     font-size: 1.1rem;
     cursor: pointer;
+    transition: filter 0.15s ease;
 }
 
 .lang-btn.is-active {
     text-decoration: underline;
+}
+
+.lang-toggle:hover,
+.theme-toggle:hover,
+.window-buttons button:hover {
+    filter: brightness(1.12);
+    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.35) inset;
 }
 
 .lang-sep {
@@ -65,6 +74,7 @@
     justify-content: center;
     border-radius: 6px;
     cursor: pointer;
+    transition: filter 0.15s ease, box-shadow 0.15s ease;
 }
 
 .theme-toggle i {
@@ -80,6 +90,7 @@
     font-size: 0.8rem;
     cursor: pointer;
     border-radius: 6px;
+    transition: filter 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
 }
 
 .window-buttons button:last-child {
@@ -89,9 +100,6 @@
     outline: none;
 }
 
-.window-buttons button:hover {
-    filter: brightness(1.05);
-}
 
 .window-buttons button:active {
     transform: translateY(1px);

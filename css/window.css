@@ -20,10 +20,18 @@
     font-size: 1.3rem;
 }
 
+.window-header > span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    min-width: 0;
+}
+
 .window-actions {
     display: flex;
     align-items: center;
     gap: 0.6rem;
+    flex-shrink: 0;
 }
 
 .lang-toggle {

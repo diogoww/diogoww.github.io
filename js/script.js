@@ -79,27 +79,39 @@ let typingTimeout = null;
 // animacao de "boot"
 function bootWindow() {
     const windowEl = document.querySelector(".window");
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+        return;
+    }
 
     windowEl.style.opacity = "0";
     windowEl.style.transform = "translateY(20px) scale(0.98)";
 
     setTimeout(() => {
-    windowEl.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-    windowEl.style.opacity = "1";
-    windowEl.style.transform = "translateY(0) scale(1)";
-  }, 300);
+        windowEl.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+        windowEl.style.opacity = "1";
+        windowEl.style.transform = "translateY(0) scale(1)";
+    }, 300);
 }
 
 // efeito de digitacao no readme
 function typeReadme(text) {
     const pre = document.querySelector(".readme pre");
-    let index = 0;
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (typingTimeout) {
         clearTimeout(typingTimeout);
     }
 
     pre.textContent = "";
+
+    if (prefersReducedMotion) {
+        pre.textContent = text;
+        return;
+    }
+
+    let index = 0;
 
     function type() {
         if (index < text.length) {
@@ -113,7 +125,7 @@ function typeReadme(text) {
 }
 
 function initI18n() {
-    const savedLang = localStorage.getItem(STORAGE_KEYS.lang);
+    const savedLang = (() => { try { return localStorage.getItem(STORAGE_KEYS.lang); } catch { return null; } })();
     activeLang = translations[savedLang] ? savedLang : "pt";
 
     const langButtons = document.querySelectorAll(".lang-btn");
@@ -142,7 +154,7 @@ function setLanguage(lang) {
     }
 
     activeLang = lang;
-    localStorage.setItem(STORAGE_KEYS.lang, lang);
+    try { localStorage.setItem(STORAGE_KEYS.lang, lang); } catch { /* storage unavailable */ }
     applyTranslations();
     setActiveLanguageButton();
 }
@@ -195,7 +207,7 @@ function setActiveLanguageButton() {
 }
 
 function initTheme() {
-    const savedTheme = localStorage.getItem(STORAGE_KEYS.theme);
+    const savedTheme = (() => { try { return localStorage.getItem(STORAGE_KEYS.theme); } catch { return null; } })();
     const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
     const isDark = savedTheme ? savedTheme === "dark" : prefersDark;
 
@@ -214,7 +226,7 @@ function initTheme() {
 function applyTheme(theme) {
     const isDark = theme === "dark";
     document.body.classList.toggle("theme-dark", isDark);
-    localStorage.setItem(STORAGE_KEYS.theme, theme);
+    try { localStorage.setItem(STORAGE_KEYS.theme, theme); } catch { /* storage unavailable */ }
 
     const icon = document.querySelector("#theme-toggle i");
     if (icon) {
@@ -228,7 +240,7 @@ function windowButtons() {
 
     buttons.forEach(btn => {
         btn.addEventListener("click", () => {
-            const isCloseButton = btn.textContent.trim() === "X";
+            const isCloseButton = btn.dataset.action === "close";
             const originalColor = getComputedStyle(btn).backgroundColor;
             
             // feedback visual

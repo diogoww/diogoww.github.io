@@ -1,23 +1,118 @@
-@media (max-width: 480px) {
+/* --- Tablet (≤768px) ---------------------------------------------------- */
+@media (max-width: 768px) {
     .window {
         width: 95vw;
     }
 
+    .window-header {
+        font-size: 1.15rem;
+        padding: 0.45rem 0.7rem;
+    }
+}
+
+/* --- Small phone (≤480px) ----------------------------------------------- */
+@media (max-width: 480px) {
+    body {
+        padding: 0.75rem 0.5rem;
+    }
+
+    .window {
+        width: 97vw;
+    }
+
     .window-body {
-        padding: 1.2rem;
+        padding: 1rem;
+    }
+
+    .window-header {
+        font-size: 1rem;
+        padding: 0.4rem 0.55rem;
+    }
+
+    .window-actions {
+        gap: 0.3rem;
+    }
+
+    .lang-toggle {
+        padding: 0.15rem 0.3rem;
+        gap: 0.25rem;
+    }
+
+    .lang-btn {
+        font-size: 0.95rem;
+    }
+
+    .theme-toggle,
+    .window-buttons button {
+        width: 26px;
+        height: 26px;
+    }
+
+    .profile {
+        margin-bottom: 1rem;
+    }
+
+    .profile img {
+        width: 90px;
+        height: 90px;
     }
 
     .profile h1 {
-        font-size: 1.9rem;
+        font-size: 1.8rem;
     }
 
-    .readme pre {
+    .subtitle {
         font-size: 0.9rem;
-        line-height: 1.4;
+    }
+
+    .socials {
+        gap: 0.8rem;
     }
 
     .socials a {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        padding: 0.45rem;
+    }
+
+    .readme pre {
+        font-size: 0.82rem;
+        line-height: 1.45;
+    }
+}
+
+/* --- Very small phone (≤360px) ------------------------------------------ */
+@media (max-width: 360px) {
+    .profile h1 {
+        font-size: 1.55rem;
+    }
+
+    .socials {
+        gap: 0.55rem;
+    }
+
+    .readme pre {
+        font-size: 0.78rem;
+    }
+}
+
+/* --- Landscape phones (short viewport) ---------------------------------- */
+@media (max-height: 500px) and (orientation: landscape) {
+    body {
         padding: 0.5rem;
+        align-items: flex-start;
+    }
+
+    .profile {
+        margin-bottom: 0.8rem;
+    }
+
+    .profile img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0.4rem;
+    }
+
+    .window-body {
+        padding: 0.8rem 1rem;
     }
 }

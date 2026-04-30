@@ -1,0 +1,41 @@
+# Variáveis de ambiente e credenciais
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+secrets.json
+credentials.json
+config.local.*
+
+# Dependências
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+
+# Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build / cache
+dist/
+build/
+.cache/
+.parcel-cache/
+
+# Uploads e arquivos temporários
+uploads/
+tmp/
+temp/

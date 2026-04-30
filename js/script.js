@@ -80,11 +80,6 @@ let typingTimeout = null;
 // animacao de "boot"
 function bootWindow() {
     const windowEl = document.querySelector(".window");
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    if (prefersReducedMotion) {
-        return;
-    }
 
     windowEl.style.opacity = "0";
     windowEl.style.transform = "translateY(20px) scale(0.98)";
@@ -99,18 +94,12 @@ function bootWindow() {
 // efeito de digitacao no readme
 function typeReadme(text) {
     const pre = document.querySelector(".readme pre");
-    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     if (typingTimeout) {
         clearTimeout(typingTimeout);
     }
 
     pre.textContent = "";
-
-    if (prefersReducedMotion) {
-        pre.textContent = text;
-        return;
-    }
 
     let index = 0;
 

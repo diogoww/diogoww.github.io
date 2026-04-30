@@ -5238,7 +5238,12 @@ a.post-thumbnail:hover {
     font-size: 48px;
     line-height: 1.2em;
     margin-top: 5px;
-    margin-bottom: 15px
+    margin-bottom: 15px;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+    word-break: keep-all
 }
 
 .home-content.third-style .hp-buttons {

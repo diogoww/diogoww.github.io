@@ -9,6 +9,8 @@
     border-radius: 50%;
     border: 2px solid #222;
     margin-bottom: 0.8rem;
+    -webkit-user-drag: none;
+    user-select: none;
 }
 
 .profile h1 {

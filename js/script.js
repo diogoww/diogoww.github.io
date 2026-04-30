@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
         initI18n();
         initTheme();
         windowButtons();
+        protectProfileImage();
 });
 
 const translations = {
@@ -231,6 +232,13 @@ function applyTheme(theme) {
     const icon = document.querySelector("#theme-toggle i");
     if (icon) {
         icon.className = isDark ? "bx bx-sun" : "bx bx-moon";
+    }
+}
+
+function protectProfileImage() {
+    const img = document.querySelector(".profile img");
+    if (img) {
+        img.addEventListener("contextmenu", e => e.preventDefault());
     }
 }
 

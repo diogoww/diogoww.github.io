@@ -188,6 +188,7 @@ h3.comment-reply-title::after {
 #services_row {
     display: flex;
     flex-wrap: wrap;
+    align-items: stretch;
     margin-bottom: 40px;
 }
 
@@ -656,7 +657,7 @@ input[type=submit]:hover,
         gap: 12px;
     }
 
-    /* Cards de serviço: coluna única, gap uniforme entre todos os cards */
+    /* Cards de serviço: coluna única no mobile */
     #services_row {
         flex-direction: column;
         gap: 12px;
@@ -668,11 +669,9 @@ input[type=submit]:hover,
     }
 
     #services_row .info-list-w-icon {
-        flex-direction: column;
         gap: 12px;
     }
 
-    /* Remove flex: 1 dos cards no mobile para não esticarem desnecessariamente */
     #services_row .info-block-w-icon {
         flex: initial;
     }

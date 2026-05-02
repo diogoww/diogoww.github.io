@@ -73,7 +73,6 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------- Header ---------- */
 .header {
-    border-bottom: 1px solid var(--border);
     padding-bottom: 24px;
 }
 
@@ -263,59 +262,6 @@ h3.comment-reply-title::after {
     overflow-wrap: break-word;
 }
 
-/* ---------- Stats (lm-info-block) ---------- */
-.lm-info-block {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-card);
-    padding: 30px 15px 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.lm-info-block::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-    opacity: 0;
-    transition: opacity var(--transition);
-}
-
-.lm-info-block:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.4), 0 0 30px var(--glow);
-    border-color: rgba(122,179,46,0.25);
-}
-
-.lm-info-block:hover::before {
-    opacity: 1;
-}
-
-.lm-info-block i {
-    color: var(--accent2);
-    font-size: 30px;
-}
-
-.lm-info-block-value {
-    background: linear-gradient(135deg, var(--text-primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    font-size: 44px;
-    font-weight: 700;
-    line-height: 1.1;
-}
-
-.lm-info-block h4 {
-    color: var(--text-muted);
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-}
 
 /* ---------- Skill bars ---------- */
 .skills-first-style .skill-container {
@@ -710,9 +656,10 @@ input[type=submit]:hover,
         gap: 12px;
     }
 
-    /* Cards de serviço: coluna única, gap generoso */
+    /* Cards de serviço: coluna única, gap uniforme entre todos os cards */
     #services_row {
         flex-direction: column;
+        gap: 12px;
         margin-bottom: 24px;
     }
 
@@ -723,6 +670,11 @@ input[type=submit]:hover,
     #services_row .info-list-w-icon {
         flex-direction: column;
         gap: 12px;
+    }
+
+    /* Remove flex: 1 dos cards no mobile para não esticarem desnecessariamente */
+    #services_row .info-block-w-icon {
+        flex: initial;
     }
 
     /* Contato mobile: form em coluna única */
@@ -746,20 +698,5 @@ input[type=submit]:hover,
         box-shadow: none;
         border-color: var(--border);
     }
-
-    .lm-info-block:hover {
-        transform: none;
-        box-shadow: none;
-        border-color: var(--border);
-    }
-
-    .lm-info-block:hover::before {
-        opacity: 0;
-    }
 }
 
-@media only screen and (max-width: 480px) {
-    .lm-info-block-value {
-        font-size: 36px;
-    }
-}

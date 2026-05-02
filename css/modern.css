@@ -189,6 +189,7 @@ h3.comment-reply-title::after {
 #services_row {
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 40px;
 }
 
 #services_row > [class*="col-"] {
@@ -256,6 +257,10 @@ h3.comment-reply-title::after {
     font-size: 13px;
     line-height: 1.7em;
     margin: 0;
+    hyphens: none;
+    -webkit-hyphens: none;
+    word-break: normal;
+    overflow-wrap: break-word;
 }
 
 /* ---------- Stats (lm-info-block) ---------- */
@@ -705,6 +710,21 @@ input[type=submit]:hover,
         gap: 12px;
     }
 
+    /* Cards de serviço: coluna única, gap generoso */
+    #services_row {
+        flex-direction: column;
+        margin-bottom: 24px;
+    }
+
+    #services_row > [class*="col-"] {
+        width: 100%;
+    }
+
+    #services_row .info-list-w-icon {
+        flex-direction: column;
+        gap: 12px;
+    }
+
     /* Contato mobile: form em coluna única */
     .contact-form .fields {
         flex-direction: column;
@@ -716,6 +736,25 @@ input[type=submit]:hover,
 
     #content .row:has(#info_list_1) {
         flex-direction: column;
+    }
+}
+
+/* Desabilita hover transform em dispositivos touch */
+@media (hover: none) {
+    .info-block-w-icon:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: var(--border);
+    }
+
+    .lm-info-block:hover {
+        transform: none;
+        box-shadow: none;
+        border-color: var(--border);
+    }
+
+    .lm-info-block:hover::before {
+        opacity: 0;
     }
 }
 

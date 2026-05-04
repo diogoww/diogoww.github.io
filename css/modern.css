@@ -303,8 +303,8 @@ h3.comment-reply-title::after {
 .timeline-item::before {
     content: '';
     position: absolute;
-    left: -6px;
-    top: 26px;
+    left: -5px;
+    top: 30px;
     width: 10px;
     height: 10px;
     border-radius: 50%;
@@ -315,6 +315,10 @@ h3.comment-reply-title::after {
 
 .timeline-item::after {
     display: none;
+}
+
+.timeline-item:first-child::before {
+    top: 13px;
 }
 
 .timeline-item h5.item-period {

@@ -367,7 +367,7 @@ h3.comment-reply-title::after {
 .page-title {
     background-color: var(--bg-card);
     border-top: none;
-    border-bottom: 1px solid var(--border);
+    border-bottom: none;
     padding: 35px 70px;
     margin-bottom: 40px;
 }
@@ -448,104 +448,6 @@ input[type=submit]:hover,
     background: linear-gradient(135deg, var(--accent2), var(--accent)) !important;
 }
 
-/* ---------- Página de Contato ---------- */
-
-/* Row principal: alinha colunas verticalmente */
-#content .row:has(#info_list_1) {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    gap: 0;
-}
-
-#content .row:has(#info_list_1) > [class*="col-"] {
-    float: none;
-}
-
-/* Cards de info compactos */
-#info_list_1 {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-#info_list_1 .info-block-w-icon {
-    padding: 18px 20px;
-    flex: initial;
-    margin-bottom: 0;
-    gap: 0;
-    align-items: center;
-}
-
-#info_list_1 .ci-icon {
-    width: 38px;
-    flex-shrink: 0;
-}
-
-#info_list_1 .ci-icon i {
-    color: var(--accent);
-    font-size: 22px;
-}
-
-#info_list_1 .ci-text h4,
-#info_list_1 .ci-text h4 a {
-    color: var(--text-primary);
-    font-size: 14px;
-    margin: 0;
-    font-weight: 500;
-}
-
-#info_list_1 .ci-text h4 a:hover {
-    color: var(--accent2);
-}
-
-/* Form com flexbox — substitui floats */
-.contact-form .fields {
-    display: flex;
-    gap: 16px;
-    align-items: stretch;
-}
-
-.contact-form .left-column {
-    flex: 1;
-    float: none;
-    width: auto;
-    margin-right: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.contact-form .right-column {
-    flex: 1;
-    float: none;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form .right-column .form-group {
-    flex: 1;
-    margin-bottom: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.contact-form .right-column textarea.form-control {
-    flex: 1;
-    resize: none;
-    min-height: 180px;
-    height: 100% !important;
-}
-
-/* Botão ocupa a largura total abaixo das colunas */
-.contact-form input[type=submit],
-.contact-form .button.btn-send {
-    display: block !important;
-    width: 100% !important;
-    margin-top: 16px !important;
-    text-align: center !important;
-}
 
 /* ---------- Scroll to top ---------- */
 .lmpixels-scroll-to-top {
@@ -572,7 +474,7 @@ input[type=submit]:hover,
 /* ---------- Footer ---------- */
 .site-footer {
     background-color: var(--bg-card);
-    border-top: 1px solid var(--border);
+    border-top: none;
     display: flex !important;
     flex-direction: column;
     align-items: center;
@@ -691,18 +593,6 @@ input[type=submit]:hover,
         flex: initial;
     }
 
-    /* Contato mobile: form em coluna única */
-    .contact-form .fields {
-        flex-direction: column;
-    }
-
-    .contact-form .right-column textarea.form-control {
-        min-height: 120px;
-    }
-
-    #content .row:has(#info_list_1) {
-        flex-direction: column;
-    }
 }
 
 /* Desabilita hover transform em dispositivos touch */

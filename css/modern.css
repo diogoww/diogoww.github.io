@@ -399,6 +399,7 @@ input[type=text],
 input[type=email],
 input[type=search],
 textarea.form-control {
+    resize: none !important;
     background: var(--bg-card) !important;
     border: 1px solid var(--border) !important;
     color: var(--text-primary) !important;
@@ -426,6 +427,15 @@ textarea.form-control:focus {
 }
 
 /* ---------- Botão de envio ---------- */
+.contact-form input[type=submit],
+.contact-form .button.btn-send {
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    margin-top: 16px !important;
+    box-sizing: border-box !important;
+}
+
 input[type=submit],
 .button.btn-send {
     background: linear-gradient(135deg, var(--accent), #4a7a10) !important;
@@ -448,6 +458,35 @@ input[type=submit]:hover,
     background: linear-gradient(135deg, var(--accent2), var(--accent)) !important;
 }
 
+
+/* ---------- Info de contato ---------- */
+#info_list_1 .info-block-w-icon {
+    min-height: 64px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+#info_list_1 .info-block-w-icon:last-child {
+    margin-bottom: 0;
+}
+
+#info_list_1 .ci-icon i {
+    color: var(--accent);
+    font-size: 20px;
+}
+
+#info_list_1 .ci-text h4,
+#info_list_1 .ci-text h4 a {
+    color: var(--text-primary) !important;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+    text-decoration: none;
+}
+
+#info_list_1 .ci-text h4 a:hover {
+    color: var(--accent2) !important;
+}
 
 /* ---------- Scroll to top ---------- */
 .lmpixels-scroll-to-top {

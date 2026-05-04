@@ -573,6 +573,17 @@ input[type=submit]:hover,
 .site-footer {
     background-color: var(--bg-card);
     border-top: 1px solid var(--border);
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.footer-social,
+.footer-copyrights {
+    float: none;
+    text-align: center;
 }
 
 .site-footer .footer-social-links li a {

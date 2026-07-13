@@ -1,28 +1,31 @@
 # Portfolio
 
-Projeto de portfolio pessoal em HTML/CSS/JS.
+Landing page pessoal (one-page/SPA) em React + Vite + Tailwind CSS.
 
 ## Estrutura
-- Paginas principais: index.html, resume.html, contact.html
-- Estilos: css/
-- Scripts: js/
-- Imagens: img/
+- `web/` — código-fonte (React + TypeScript + Tailwind). É aqui que o site é editado.
+- `index.html`, `assets/`, `img/` (raiz) — build de produção gerado a partir de `web/`, servido diretamente pelo GitHub Pages.
+- `CNAME` — domínio customizado (não mexer).
 
-## Como rodar
-1. Abra o arquivo index.html no navegador.
-2. Para navegar, use o menu superior.
+## Como editar
+1. `cd web`
+2. `npm install`
+3. `npm run dev` — servidor local com hot reload.
+4. Edite os componentes em `web/src/components/`.
 
-## Personalizacao rapida
-- Cores principais e estilos: edite css/main.css.
-- Textos das paginas: edite os arquivos HTML.
-- Imagens: substitua arquivos em img/ (mantenha os mesmos nomes para nao quebrar referencias).
+## Como publicar
+O GitHub Pages serve os arquivos estáticos direto da raiz/branch `main`, sem build automático. Depois de alterar o site:
 
-## Icones
-Os icones sao fontes locais importadas pelo css/main.css:
-- linecons
-- linearicons
-- fontawesome
+```bash
+cd web
+npm run build
+cp -r dist/. ..
+```
 
-## Observacoes
-- Este projeto e estatico, nao requer backend.
-- Para publicar, basta subir os arquivos para um host estatico.
+Isso atualiza `index.html`, `assets/` e `img/` na raiz do repositório. Confira as mudanças com `git status` e faça commit normalmente.
+
+## Stack
+- React 19 + TypeScript
+- Vite
+- Tailwind CSS v4
+- Fontes: Archivo, Instrument Serif, JetBrains Mono (Google Fonts)

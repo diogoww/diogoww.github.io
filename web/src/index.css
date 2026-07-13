@@ -1,0 +1,98 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink-950: #150b22;
+  --color-ink-900: #1e1030;
+  --color-ink-800: #2b1642;
+  --color-ink-700: #6d28d9;
+  --color-ink-600: #8b5cf6;
+  --color-paper: #f2f0ea;
+
+  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-ink-950);
+  color: var(--color-paper);
+  font-family: var(--font-display);
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    radial-gradient(1200px 800px at 82% -5%, color-mix(in srgb, var(--color-ink-600) 45%, transparent), transparent 62%),
+    radial-gradient(1000px 900px at -8% 40%, color-mix(in srgb, var(--color-ink-700) 55%, transparent), transparent 60%),
+    radial-gradient(900px 700px at 55% 105%, color-mix(in srgb, var(--color-ink-700) 40%, transparent), transparent 65%);
+  pointer-events: none;
+}
+
+::selection {
+  background: var(--color-ink-700);
+  color: var(--color-paper);
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Marquee */
+.marquee-viewport {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.marquee-viewport:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% / var(--marquee-copies, 2)));
+  }
+}
+
+/* Numbered section index watermark */
+.section-index {
+  font-variant-numeric: tabular-nums;
+}

@@ -7,6 +7,9 @@ const NAV_LINKS = [
   { href: '#contato', label: 'Contato' },
 ]
 
+// O CTA em pill já cobre "Contato" no nav de desktop, então some da lista aqui.
+const DESKTOP_NAV_LINKS = NAV_LINKS.filter((link) => link.href !== '#contato')
+
 function Header() {
   const [open, setOpen] = useState(false)
 
@@ -22,7 +25,7 @@ function Header() {
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Navegação principal">
           <ul className="flex items-center gap-8 font-mono text-xs uppercase tracking-[0.15em] text-paper/70">
-            {NAV_LINKS.map((link) => (
+            {DESKTOP_NAV_LINKS.map((link) => (
               <li key={link.href}>
                 <a href={link.href} className="transition-colors hover:text-paper">
                   {link.label}
